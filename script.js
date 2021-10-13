@@ -64,6 +64,7 @@ function createCircle() {
     height: ${size}px;
     top: ${top}px;
     left: ${left}px ;
+    background: #${randomColor()};
     `;
 
     board.appendChild(circle);
@@ -73,6 +74,14 @@ function createCircle() {
 function setSize(min, max) {
     return Math.floor(Math.random() * (max-min) + min);
     
+}
+
+
+
+function randomColor(){
+
+    return Math.floor(Math.random()*16777215).toString(16);
+
 }
 
 function setPosition(min,max){
@@ -87,3 +96,4 @@ board.addEventListener('click', (e) => {
         createCircle();
     }
 })
+
